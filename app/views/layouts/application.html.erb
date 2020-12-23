@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Kanshare</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+  
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <header class="site-header">
+      <%= link_to root_path do %>
+        <h1 class="site-logo"></h1>
+      <% end %>
+      <nav class="nav">
+        <ul class="nav-menu">
+          <% if user_signed_in? %>
+            <li class="nav-menu-item">
+              <%= link_to "TODO", dos_path, class: "nav-item-link fas fa-pen-alt" %>
+            </li>
+            <li class="nav-menu-item">
+              <%= link_to "BOOK", books_path, class: "nav-item-link fas fa-book" %>
+            </li>
+            <li class="nav-menu-item">
+              <%= link_to "USERS", users_path, class: "nav-item-link fas fa-users" %>
+            </li>
+            <li class="nav-menu-item">
+              <%= link_to "MYPAGE", user_path(current_user.id), class: "nav-item-link fas fa-user" %>
+            </li>
+          <% else %>
+            <li class="nav-menu-item">
+              <%= link_to "USERS", users_path, class: "nav-item-link fas fa-users" %>
+            </li>
+            <li class="nav-menu-item">
+              <%= link_to "TODO", dos_path, class: "nav-item-link fas fa-pen-alt" %>
+            </li>
+            <li class="nav-menu-item">
+              <%= link_to "HOME", root_path, class: "nav-item-link fas fa-home" %>
+            </li>
+            <li class="nav-menu-item">
+              <%= link_to "LOGIN", new_user_session_path, class: "nav-item-link fas fa-sign-in-alt" %>
+            </li>
+          <% end %>
+        </ul>
+      </nav>
+    </header>
+    <%= yield %>
+  </body>
+</html>

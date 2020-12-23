@@ -1,0 +1,15 @@
+<div class="users-index">
+  <h1 class="users-index-theme">選手一覧</h1>
+  <div class="users-index-item">
+    <div class="users-index-articles">
+      <% @users.each do |user| %>
+      <div class="user-article">
+        <i class="fas fa-user"></i>
+        <%= link_to user_path(user.id) do %>
+          <p class="user-article-name"><%= user.name %></p>
+        <% end %>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>

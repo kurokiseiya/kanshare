@@ -1,0 +1,48 @@
+<div class="books-index">
+  <% if flash[:book_destroy_success] %>
+    <p class="book_destroy_success"><%= flash[:book_destroy_success] %></p>
+  <% end %>
+  <%= link_to new_book_path do %>
+    <div class="books-tonew">
+      <i class="fas fa-feather-alt"></i>
+    </div>
+  <% end %>
+  <section class="books">
+    <% @books.each do |book| %>
+    <div class="book-item">
+      <div class="book-contributor">
+        <%= link_to user_path(book.user) do %>
+          <%= attachment_image_tag book.user, :profile_image, fallback: "no_user_image.png", class: "book-contributor-image" %>
+        <% end %>
+        <h2 class="book-contributor-name"><%= book.user.name %></h2>
+        <label class="book-posted-day"><%= book.created_at.strftime('%Y/%m/%d %H:%M') %></label>
+      </div>
+      <div class="book-details">
+        <div class="book-details-category">
+          <div class="book-details-text">
+            <h2 class="book-title">『<%= book.book_title %>』</h2>
+            <h4 class="book-subtitle">〜<%= book.book_subtitle %>〜</h4>
+          </div>
+          <%= attachment_image_tag book, :book_image, fallback: "no_image.jpeg", class: "book-image" %>
+        </div>
+      </div>
+      <div class="book-action">
+        <%= link_to "感想を見る", book_path(book.id), class: "btn btn-outline-info btn-lg toimpression" %>
+        <% if book.favorited_by?(current_user) %>
+          <div class="books-heart">
+          <%= link_to book_favorites_path(book), method: :delete do %>
+            <label class="heart-red">♥ <%= book.favorites.count %></label>
+          <% end %>
+          </div>
+      <% else %>
+          <div class="books-heart">
+          <%= link_to book_favorites_path(book), method: :post do %>
+            <label class="heart-white">♡ <%= book.favorites.count %></label>
+          <% end %>
+          </div>
+      <% end %>
+      </div>
+    </div>
+    <% end %>
+  </section>
+</div>

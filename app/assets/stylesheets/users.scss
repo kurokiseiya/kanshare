@@ -1,0 +1,500 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+/* users show.html.erb */
+.user-show {
+  width: 100%;
+  height: auto;
+  padding: 350px 0 0 0;
+  .user-show-introduce {
+    width: 90%;
+    height: auto;
+    margin: 0 auto;
+    .user-show-introduce-image {
+      width: 100%;
+      height: auto;
+      text-align: center;
+      .user-show-introduce-profile-image {
+        width: 700px;
+        height: auto;
+        border-radius: 50%;
+      }
+    }
+    .user-show-introduce-text {
+      width: 90%;
+      height: auto;
+      margin: 50px auto 0 auto;
+      text-align: center;
+      .user-show-introduce-name {
+        font-weight: bold;
+        font-size: 50px;
+        letter-spacing: 10px;
+      }
+      .user-show-introduce-eng-name {
+        letter-spacing: 15px;
+        color: #444444;
+      }
+      .user-show-introduce-line {
+        width: 60%;
+        margin: 10px auto 0 auto;
+        border-bottom: 1px solid silver;
+      }
+      .user-show-introduce-place {
+        margin: 30px 0 0 0;
+        font-size: 30px;
+        font-family: 'Osaka',sans-serif;
+      }
+      .user-show-introduce-birthday {
+        margin: 30px 0 0 0;
+        font-size: 30px;
+        font-family: 'Osaka',sans-serif;
+      }
+      .user-show-introduce-like {
+        margin: 30px 0 0 0;
+        font-size: 30px;
+        font-family: 'Osaka',sans-serif;
+      }
+    }
+    .user-show-introduce-dream {
+      width: 90%;
+      height: auto;
+      margin: 100px auto 0 auto;
+      text-align: center;
+      .user-show-introduce-dream-theme {
+        font-weight: bold;
+        font-family:"Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体";
+        font-size: 55px;
+      }
+      .user-show-introduce-dream-text {
+        font-size: 45px;
+        font-family: 'HanziPen SC',sans-serif;
+        margin: 30px 0 0 0;
+      }
+    }
+  }
+}
+
+.books-show-books-index-theme {
+  font-size: 60px;
+  font-weight: bold;
+  margin: 0 0 20px 20px;
+  letter-spacing: 10px;
+  color: #333333;
+}
+.tologout-button {
+  text-align: right;
+  margin: 30px 0 0 0;
+  .fa-sign-out-alt {
+    font-size: 25px;
+    color: silver;
+  }
+}
+/* users edit.html.erb */
+.user-edit {
+  width: 100%;
+  height: auto;
+  padding: 250px 0 100px 0;
+  .user-edit-introduce {
+    width: 90%;
+    height: auto;
+    margin: 0 auto;
+    .user-edit-introduce-image {
+      width: 100%;
+      height: auto;
+      text-align: center;
+      .user-edit-introduce-profile-image {
+        width: 700px;
+        height: auto;
+        border-radius: 50%;
+      }
+    }
+    .user-edit-introduce-text {
+      width: 90%;
+      height: auto;
+      margin: 50px auto 0 auto;
+      text-align: center;
+      .user-edit-introduce-name {
+        font-weight: bold;
+        font-size: 50px;
+        letter-spacing: 10px;
+        margin: 100px 0 0 0;
+      }
+      .user-edit-introduce-eng-name {
+        letter-spacing: 15px;
+        color: #444444;
+        margin: 50px 0 0 0;
+      }
+      .user-edit-introduce-line {
+        width: 60%;
+        margin: 10px auto 0 auto;
+        border-bottom: 1px solid silver;
+      }
+      .user-edit-introduce-place {
+        margin: 70px 0 0 0;
+        font-size: 30px;
+        font-family: 'Osaka',sans-serif;
+      }
+      .user-edit-introduce-birthday {
+        margin: 70px 0 0 0;
+        font-size: 30px;
+        font-family: 'Osaka',sans-serif;
+      }
+      .user-edit-introduce-like {
+        margin: 70px 0 0 0;
+        font-size: 30px;
+        font-family: 'Osaka',sans-serif;
+      }
+    }
+    .user-edit-introduce-dream {
+      width: 90%;
+      height: auto;
+      margin: 100px auto 0 auto;
+      text-align: center;
+      .user-edit-introduce-dream-theme {
+        font-weight: bold;
+        font-family:"Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体";
+        font-size: 55px;
+      }
+      .user-edit-introduce-dream-text {
+        font-size: 45px;
+        font-family: 'HanziPen SC',sans-serif;
+        margin: 30px 0 0 0;
+      }
+    }
+  }
+}
+
+.user-edit-introduce-profile-image-form-theme {
+  width: 80%;
+  margin: 40px 0 0 0;
+  display: flex;
+  .fa-camera {
+    font-size: 32px;
+    margin: 0 10px 0 0;
+  }
+  h3 {
+    font-weight: bold;
+    font-size: 30px;
+    font-family: 'Osaka',sans-serif;
+  }
+}
+.user-edit-introduce-image-formarea {
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  input {
+    width: 80%;
+    font-size: 10px;
+  }
+  .user-edit-introduce-image-form {
+    width: 80%;
+    font-size: 30px;
+    display: flex;
+    font-weight: bold;
+  }
+}
+.user-edit-introduce-name-form {
+  text-align: center;
+  border: 1px solid silver;
+  padding: 10px;
+}
+.user-edit-introduce-englishname-form {
+ text-align: center; 
+ border: 1px solid silver;
+ padding: 10px;
+}
+.user-edit-introduce-place-form {
+  border: 1px solid silver;
+  padding: 10px;
+  text-align: center;
+}
+.user-edit-introduce-birthday-form {
+  border: 1px solid silver;
+  padding: 10px;
+  text-align: center;
+}
+.user-edit-introduce-like-form {
+  border: 1px solid silver;
+  padding: 10px;
+}
+.user-edit-introduce-dream-form {
+  border: 1px solid silver;
+  padding: 10px;
+  width: 100%;
+  height: auto;
+  margin: 0 10px 0 10px;
+}
+
+.user-edit-introduce-button {
+  margin: 100px 0 0 0;
+  text-align: center;
+  .btn {
+    font-size: 30px;
+    width: 300px;
+    height: auto;
+  } 
+}
+
+.toedit-button {
+  margin: 50px 0 0 0;
+  text-align: center;
+  .btn-success {
+  }
+}
+
+/* registration new.html.erb */
+.user-sign-up {
+  width: 100%;
+  height: 2500px;
+  padding: 350px 0 0 0;
+  background-color: #EEEEEE;
+  .user-sign-up-item {
+    width: 90%;
+    height: auto;
+    margin: 30px auto 0 auto;
+    text-align: center;
+    .fa-user {
+      font-size: 100px;
+      margin: 0 0 40px 0;
+    }
+    .user-sign-up-theme {
+      font-size: 60px;
+      font-weight: bold;
+      letter-spacing: 20px;
+      font-family: 'Osaka', sans-serif;
+    }
+    .form-field {
+      width: 100%;
+      height: auto;
+      .field {
+        width: 80%;
+        height: auto;
+        margin: 80px auto 0 auto;
+        font-size: 35px;
+        font-weight: bold;
+        .user-sign-up-place-form {
+          text-align: center;
+          border: 1px solid silver;
+          padding: 10px;
+        }
+        .user-sign-up-birthday-form {
+          width: 70%;
+          height: auto;
+          text-align: center;
+          border: 1px solid silver;
+          font-family: 'HanziPen SC',sans-serif;
+          padding: 10px;
+        }
+        .user-sign-up-dream-form {
+          width: 90%;
+          height: auto;
+          text-align: center;
+          border: 1px solid silver;
+          font-family:"Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体";
+          padding: 10px;
+        }
+        .user-sign-up-email-form {
+          width: 70%;
+          height: auto;
+          text-align: center;
+          border: 1px solid silver;
+          padding: 10px;
+        }
+        .user-sign-up-password-form {
+          width: 70%;
+          height: auto;
+          text-align: center;
+          border: 1px solid silver;
+          padding: 10px;
+        }
+      }
+    }
+  }
+}
+
+.actions {
+  width: 100%;
+  height: auto;
+  text-align: center;
+  margin: 100px 0 0 0;
+  .user-sign-up-button {
+    margin: 0 auto;
+    width: 150px;
+    height: 70px;
+    font-size: 25px;
+  }
+}
+
+.name-field {
+  display: flex;
+  width: 100%;
+  height: auto;
+  margin: 80px auto 0 auto;
+  font-size: 40px;
+  font-weight: bold;
+  .japanese-field {
+    width: 90%;
+    height: auto;
+    margin: 0 auto;
+    font-family: 'ヒラギノ角ゴ StdN','Hiragino Kaku Gothic StdN',sans-serif;
+    .japanese-field-title {
+      letter-spacing: 25px;
+    }
+    .user-sign-up-japanesename-form {
+      width: 90%;
+      height: auto;
+      text-align: center;
+      border: 1px solid silver;
+      padding: 10px;
+    }
+  }
+  .english-field {
+    width: 90%;
+    height: auto;
+    margin: 0 auto;
+    font-family: 'Skia-Regular_Black',sans-serif;
+    .user-sign-up-englishname-form {
+      width: 90%;
+      height: auto;
+      text-align: center;
+      border: 1px solid silver;
+      letter-spacing: 3px;
+      padding: 10px;
+    }
+  }
+}
+
+.field-theme {
+  font-size: 35px;
+  font-family: 'Osaka',sans-serif;
+  font-weight: bold;
+}
+
+/* sessions new.html.erb */
+.user-sign-in {
+  width: 100%;
+  height: 2200px;
+  padding: 500px 0 0 0;
+  background-image: url("sign-in.jpeg");
+  background-position: center;
+  background-size: cover;
+  .user-sign-in-item {
+    width: 90%;
+    height: auto;
+    margin: 0 auto;
+    text-align: center;
+    .fa-user-plus {
+      font-size: 100px;
+      margin: 0 0 40px 0;
+    }
+    .user-sign-in-theme {
+      font-size: 75px;
+      font-weight: bold;
+      letter-spacing: 10px;
+      font-family: 'Skia-Regular_Black',sans-serif;
+    }
+    .field {
+      width: 100%;
+      height: auto;
+      margin: 100px 0 0 0;
+      .sign-in-name-field-title {
+        font-size: 50px;
+        font-weight: bold;
+        font-family: 'Osaka',sans-serif;
+      }
+      .sign-in-password-field-title {
+        font-size: 50px;
+        font-weight: bold;
+        font-family: 'Osaka',sans-serif;
+      }
+      .user-sign-in-name-form {
+        width: 70%;
+        height: auto;
+        font-size: 50px;
+        padding: 5px;
+        text-align: center;
+        font-weight: bold;
+        font-family: 'HanziPen SC',sans-serif;
+        letter-spacing: 5px;
+        border: 1px solid silver;
+      }
+      .user-sign-in-password-form {
+        width: 70%;
+        height: auto;
+        font-size: 40px;
+        padding: 10px;
+        text-align: center;
+        font-family: 'HanziPen SC',sans-serif;
+        border: 1px solid silver;
+      }
+    }
+  }
+}
+
+.sign-in-actions {
+  margin: 150px 0 0 0;
+  .sign-in-button {
+    width: 40%;
+    height: 70px;
+    font-size: 30px;
+  }
+}
+
+
+/* users index.html.erb */
+.users-index {
+  width: 100%;
+  height: auto;
+  padding: 250px 0 0 0;
+  text-align: center;
+  .users-index-theme {
+    margin: 30px 0 0 0;
+    font-size: 50px;
+    font-family:"Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体";
+    font-weight: bold;
+    letter-spacing: 10px;
+  }
+  .users-index-item {
+    width: 95%;
+    height: auto;
+    margin: 70px auto 0 auto;
+    .users-index-articles {
+      width: 100%;
+      height: auto;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      .user-article {
+        width: 250px;
+        height: 330px;
+        margin: 30px 10px;
+        .fa-user {
+          font-size: 13em;
+        }
+        .user-article-name {
+          font-size: 40px;
+          font-weight: bold;
+          font-family: 'HanziPen SC',sans-serif;
+          margin: 15px;
+          letter-spacing: 3px;
+          color: #008BBB;
+        }
+      }
+    }
+  }
+}
+
+/* user flash message */
+.user-edit-success-area {
+  text-align: center;
+  margin: 0 0 20px 0;
+  .user-edit-success {
+    color: green;
+    font-family: YuGothic,'Yu Gothic',sans-serif;
+    font-size: 30px;
+  }
+}

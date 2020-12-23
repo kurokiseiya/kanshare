@@ -1,0 +1,77 @@
+<%= form_with model:@user, local:true do |f| %>
+<div class="user-edit">
+  <div class="user-edit-introduce">
+    <div class="user-edit-introduce-image">
+      <%= attachment_image_tag @user, :profile_image, fallback: "no_user_image.png", class: "user-edit-introduce-profile-image" %>
+    </div>
+    <div class="user-edit-introduce-profile-image-form-theme">
+      <i class="fas fa-camera"></i>
+      <h3>プロフィール画像</h3>
+    </div>
+    <div class="user-edit-introduce-image-formarea">
+      <%= f.attachment_field :profile_image, placeholder: "プロフィール画像", class: "user-edit-introduce-image-form" %>
+    </div>
+    <div class="user-edit-introduce-text">
+      <h1 class="user-edit-introduce-name">
+        <% if @user.errors.any? && @user.errors.full_messages_for(:name) %>
+          <div class="book-new-error-area">
+          <% @user.errors.full_messages_for(:name).each do |message| %>
+            <p class="book-new-error-message"><%= message %></p>
+          <% end %>
+          </div>
+        <% end %>
+        <%= f.text_field :name, autofocus: true, placeholder:"名前", class: "user-edit-introduce-name-form" %> 
+      </h1>
+      <h3 class="user-edit-introduce-eng-name">
+        <% if @user.errors.any? && @user.errors.full_messages_for(:english_name) %>
+          <div class="book-new-error-area">
+          <% @user.errors.full_messages_for(:english_name).each do |message| %>
+            <p class="book-new-error-message"><%= message %></p>
+          <% end %>
+          </div>
+        <% end %>
+        <%= f.text_field :english_name, autofocus: true, placeholder:"NAME", class: "user-edit-introduce-englishname-form" %>
+      </h3>
+      <h3 class="user-edit-introduce-place">
+        <% if @user.errors.any? && @user.errors.full_messages_for(:place) %>
+          <div class="book-new-error-area">
+          <% @user.errors.full_messages_for(:place).each do |message| %>
+            <p class="book-new-error-message"><%= message %></p>
+          <% end %>
+          </div>
+        <% end %>
+        <%= f.text_field :place, autofocus: true, placeholder:"出身地", class: "user-edit-introduce-place-form" %>
+      </h3>
+      <h3 class="user-edit-introduce-birthday">
+        <% if @user.errors.any? && @user.errors.full_messages_for(:birthday) %>
+          <div class="book-new-error-area">
+          <% @user.errors.full_messages_for(:birthday).each do |message| %>
+            <p class="book-new-error-message"><%= message %></p>
+          <% end %>
+          </div>
+        <% end %>
+        <%= f.text_field :birthday, autofocus: true, placeholder:"〇〇〇〇年〇〇月〇〇日", class: "user-edit-introduce-birthday-form" %>
+      </h3>
+      <h3 class="user-edit-introduce-like">
+        <%= f.text_area :like, autofocus: true, placeholder:"好きなこと", class: "user-edit-introduce-like-form" %>
+      </h3>
+    </div>
+    <div class="user-edit-introduce-dream">
+      <h3 class="user-edit-introduce-dream-theme btn btn-secondary">目標</h3>
+      <div class="user-edit-introduce-dream-text">
+        <% if @user.errors.any? && @user.errors.full_messages_for(:draem) %>
+          <div class="book-new-error-area">
+          <% @user.errors.full_messages_for(:dream).each do |message| %>
+            <p class="book-new-error-message"><%= message %></p>
+          <% end %>
+          </div>
+        <% end %>
+        <%= f.text_area :dream, autofocus: true, placeholder:"夢・目標", class: "user-edit-introduce-dream-form" %>
+      </div>
+    </div>
+    <div class="user-edit-introduce-button">
+    <%= f.submit "OK", class: "btn btn-info" %>
+    </div>
+  </div>
+</div>
+<% end %>

@@ -1,0 +1,17 @@
+ja:
+  activerecord:
+    models:
+      book: 本
+      user: 自分
+    attributes:
+      book:
+        book_title: タイトル
+        book_subtitle: サブタイトル
+        book_caption: 感想
+      user:
+        name: 名前
+        english_name: NAME
+        place: 出身地
+        birthday: 生年月日
+        dream: 夢・目標
+        

@@ -1,0 +1,49 @@
+<div class="books-new">
+  <h1 class="books-new-theme">BOOKSHARE</h1>
+  <%= form_with model: @book, local:true do |f| %>
+  <div class="books-new-form">
+    <div class="books-new-title-part">
+      <h2 class="books-new-title-label">本のタイトル</h2>
+      <% if @book.errors.any? %>
+      <div class="book-new-error-area">
+        <% @book.errors.full_messages_for(:book_title).each do |message| %>
+          <p class="book-new-error-message"><%= message %></p>
+        <% end %>
+      </div>
+      <% end %>
+      <%= f.text_field :book_title, placeholder: "SHAREしたい本", class: "books-new-title-form" %>
+    </div>
+    <div class="books-new-subtitle-part">
+      <h3 class="books-new-subtitle-label">本のサブタイトル</h3>
+      <% if @book.errors.any? %>
+      <div class="book-new-error-area">
+        <% @book.errors.full_messages_for(:book_subtitle).each do |message| %>
+          <p class="book-new-error-message"><%= message %></p>
+        <% end %>
+      </div>
+      <% end %>
+      <%= f.text_field :book_subtitle, placeholder: "自由に好きなサブタイトルを書こう！", class: "books-new-subtitle-form" %>
+    </div>
+    <div class="books-new-caption-part">
+      <h3 class="books-new-caption-label">本の感想</h3>
+      <% if @book.errors.any? %>
+      <div class="book-new-error-area">
+        <% @book.errors.full_messages_for(:book_caption).each do |message| %>
+          <p class="book-new-error-message"><%= message %></p>
+        <% end %>
+      </div>
+      <% end %>
+      <%= f.text_area :book_caption, placeholder: "本の内容をアウトプットしてみんなが読みたくなるように紹介しよう！", class: "books-new-caption-form" %>
+    </div>
+    <div class="books-new-url-part">
+      <h3 class="books-new-url-label">この本の購入時URL</h3>
+      <%= f.text_field :book_url, placeholder: "Amazonや楽天などの購入時URL", class: "books-new-url-form" %>
+    </div>
+    <div class="books-new-image-part">
+      <h3 class="books-new-image-label">本の写真</h3>
+      <%= f.attachment_field :book_image, class: "books-new-image-form" %>
+    </div>
+      <%= f.submit '投稿', class: "books-new-form-button btn btn-info w-50 btn-bg" %>
+  </div>
+  <% end %>
+</div>

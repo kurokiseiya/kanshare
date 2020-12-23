@@ -1,0 +1,20 @@
+<div class="do-new">
+  <div class="do-new-item">
+    <%= attachment_image_tag   @do_user, :profile_image, fallback: "no_user_image.png", class: "do-new-contributor-image" %>
+    <%= form_with model: @do, local:true do |f| %>
+    <% if flash[:do_new_alert] %>
+    <div class="do_new_alert_area">
+      <p class="do_new_alert"><%= flash[:do_new_alert] %></p>
+    </div>
+    <% end %>
+    <div class="do-new-area">
+      <%= f.text_area :do_text, placeholder: "今日のTODOや自分の思考をみんなに共有しよう！", class: "do-new-text-area js-text" %>
+      <div class="count-area">
+        <P class="js-text-count pull-right"></P>
+      </div>
+    </div>
+    <div class="do-new-button-area">
+      <%= f.submit "投稿", class: "do-new-button btn btn-info" %>
+    </div>
+    <% end %>
+</div>

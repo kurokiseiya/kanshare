@@ -1,0 +1,66 @@
+<div class="user-show">
+  <% if flash[:user_edit_success] %>
+  <div class="user-edit-success-area">
+    <p class="user-edit-success"><%= flash[:user_edit_success] %></p>
+  </div>
+  <% end %>
+  <div class="user-show-introduce">
+    <div class="user-show-introduce-image">
+      <%= attachment_image_tag @user, :profile_image, fallback: "no_user_image.png", class: "user-show-introduce-profile-image" %>
+    </div>
+    <div class="user-show-introduce-text">
+      <h1 class="user-show-introduce-name"><%= @user.name %></h1>
+      <h3 class="user-show-introduce-eng-name"><%= @user.english_name %></h3>
+      <div class="user-show-introduce-line"></div>
+      <h3 class="user-show-introduce-place"><%= @user.place %>出身</h4>
+      <div class="user-show-introduce-line"></div>
+      <h3 class="user-show-introduce-birthday"><%= @user.birthday %>生まれ</h4>
+      <div class="user-show-introduce-line"></div>
+      <h3 class="user-show-introduce-like"><%= @user.like %></h4>
+    </div>
+    <div class="user-show-introduce-dream">
+      <h3 class="user-show-introduce-dream-theme btn btn-secondary">目標</h3>
+      <div class="user-show-introduce-dream-about">
+        <p class="user-show-introduce-dream-text">『<%= @user.dream %>』</p>
+      </div>
+    </div>
+    <div class="toedit-button">
+      <% if @user == current_user %>
+        <%= link_to "プロフィール編集", edit_user_path(@user), class: "btn btn-success" %>
+      <% end %>
+    </div>
+    <div class="tologout-button">
+      <% if @user == current_user %>
+        <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "fas fa-sign-out-alt" %>
+      <% end %>
+    </div>
+  </div>
+  <div class="books-index">
+    <h2 class="books-show-books-index-theme">MYBOOK</h2>
+  <section class="books">
+    <% @books.each do |book| %>
+    <div class="book-item">
+      <div class="book-contributor">
+        <%= attachment_image_tag book.user, :profile_image, fallback: "no_user_image.png", class: "book-contributor-image" %>
+        <h2 class="book-contributor-name"><%= book.user.name %></h2>
+        <label class="book-posted-day"><%= book.created_at.strftime('%Y/%m/%d %H:%M') %></label>
+      </div>
+      <div class="book-details">
+        <div class="book-details-category">
+          <div class="book-details-text">
+            <h2 class="book-title">『<%= book.book_title %>』</h2>
+            <h4 class="book-subtitle">〜<%= book.book_subtitle %>〜</h4>
+          </div>
+          <%= attachment_image_tag book, :book_image, fallback: "no_image.jpeg", class: "book-image" %>
+        </div>
+      </div>
+      <% if user_signed_in? %>
+      <div class="book-action">
+        <%= link_to "感想を見る", book_path(book.id), class: "btn btn-outline-info btn-lg toimpression" %>
+      </div>
+      <% end %>
+    </div>
+    <% end %>
+  </section>
+</div>
+</div>

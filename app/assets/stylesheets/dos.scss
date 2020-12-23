@@ -1,0 +1,325 @@
+// Place all the styles related to the Dos controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+/* do new.html.erb */
+.do-new {
+  width: 100%;
+  height: auto;
+  padding: 220px 0 0 0;
+  .do-new-item {
+    width: 100%;
+    height: auto;
+    padding: 30px;
+    .do-new-contributor-image {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      border: none;
+      object-fit: contain;
+    }
+    .do-new-area {
+      width: 95%;
+      height: auto;
+      margin: 20px 0 0 auto;
+      .do-new-text-area {
+        width: 95%;
+        height: 700px;
+        margin: 0 0 0 auto;
+        border: 1px solid #008BBB;
+        font-size: 35px;
+        padding: 10px;
+        line-height: 50px;
+      }
+    }
+  }
+}
+.do-new-button-area {
+  width: 100%;
+  height: auto;
+  text-align: center;
+  margin: 30px 0 0 0;
+  .do-new-button {
+    font-size: 25px;
+    width: 30%;
+  }
+}
+.count-area {
+  width: 95%;
+  height: auto;
+  text-align: right;
+  .js-text-count {
+    font-size: 25px;
+  }
+}
+
+/* do index.html.erb */
+.dos-index {
+  padding: 200px 0 0 0;
+}
+.dos {
+  width: 100%;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  .do-item {
+    width: 100%;
+    height: auto;
+    border: 1px solid #c0c0c0;
+    padding: 50px 0 60px 0;
+    .do-contributor {
+      width: 100%;
+      height: auto;
+      display: flex;
+      padding: 0 0 0 20px;
+      .do-contributor-image {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        border: none;
+        object-fit: contain;
+      }
+      .do-contributor-name {
+        margin-left: 30px;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+      }
+      .do-posted-day {
+        margin-left: 20px;
+        color: #c0c0c0;
+        font-size: 25px;
+        display: flex;
+        align-items: center;
+      }
+    }
+    .do-details {
+      width: 90%;
+      height: auto;
+      margin: 0 auto 0 auto;
+      .do-details-category {
+        display: flex;
+        .do-details-text {
+          width: 85%;
+          height: auto;
+          margin: 0 0 0 auto;
+          .do-details-text-word {
+            font-size: 33px;
+            color: #222222;
+          }
+        }
+      }
+    }
+  }
+}
+.link-none:hover {
+  text-decoration: none;
+}
+    
+.dos-tonew {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background-color: #1E90FF;
+  position:fixed;
+  right: 60px;
+  bottom: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 5px 2px rgba(0, 0, 0, .5);
+.fa-pen-alt {
+  font-size: 4em;
+  color: white;
+  }
+}
+
+/* dos show.html.erb */
+.dos-show {
+  padding: 200px 0 0 0;
+}
+  .dos-show-item {
+    width: 100%;
+    height: auto;
+    border: 1px solid #c0c0c0;
+    padding: 50px 0 60px 0;
+    .do-show-contributor {
+      width: 100%;
+      height: auto;
+      display: flex;
+      padding: 0 0 0 20px;
+      .do-show-contributor-image {
+        width: 170px;
+        height: 170px;
+        border-radius: 50%;
+        border: none;
+        object-fit: contain;
+      }
+      .do-show-contributor-name {
+        margin-left: 35px;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+      }
+      .do-show-posted-day {
+        margin-left: 20px;
+        color: #c0c0c0;
+        font-size: 30px;
+        display: flex;
+        align-items: center;
+      }
+      .do-show-destroy-area {
+        margin: 0 0 0 120px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .do-show-destroy-button {
+          margin: 0 0 0 20px;
+        }
+      }
+    }
+    .do-show-details {
+      width: 90%;
+      height: auto;
+      margin: 30px auto 0 auto;
+      .do-show-details-category {
+        display: flex;
+        .do-show-details-text {
+          width: 90%;
+          height: auto;
+          margin: 0 0 0 auto;
+          .do-show-details-text-word {
+            font-size: 35px;
+            color: #222222;
+          }
+        }
+      }
+    }
+  }
+  
+  /* do edit.html.erb */
+.do-edit {
+  width: 100%;
+  height: auto;
+  padding: 220px 0 0 0;
+  .do-edit-item {
+    width: 100%;
+    height: auto;
+    padding: 30px;
+    .do-edit-contributor-image {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      border: none;
+      object-fit: contain;
+    }
+    .do-edit-area {
+      width: 95%;
+      height: auto;
+      margin: 20px 0 0 auto;
+      .do-edit-text-area {
+        width: 95%;
+        height: 700px;
+        margin: 0 0 0 auto;
+        border: 1px solid #008BBB;
+        font-size: 35px;
+        padding: 10px;
+        line-height: 50px;
+      }
+    }
+  }
+}
+.do-edit-button-area {
+  width: 100%;
+  height: auto;
+  text-align: center;
+  margin: 30px 0 0 0;
+  .do-edit-button {
+    font-size: 25px;
+    width: 30%;
+  }
+}
+.count-area {
+  width: 95%;
+  height: auto;
+  text-align: right;
+  .js-text-count {
+    font-size: 25px;
+  }
+}
+
+/* do サクセスメッセージ */
+.do_new_success {
+  color: green;
+  font-family: YuGothic,'Yu Gothic',sans-serif;
+  font-size: 30px;
+  margin: 20px 0 20px 10px;
+}
+
+.do_new_alert_area {
+  text-align: center;
+  .do_new_alert {
+    color: red;
+    font-family: YuGothic,'Yu Gothic',sans-serif;
+    font-size: 30px;
+  }
+}
+.do_destroy_success {
+  color: green;
+  font-family: YuGothic,'Yu Gothic',sans-serif;
+  font-size: 30px;
+  margin: 20px 0 20px 10px;
+}
+
+.do_destroy_alert_area {
+  text-align: center;
+  .do_destroy_alert {
+    color: red;
+    font-family: YuGothic,'Yu Gothic',sans-serif;
+    font-size: 30px;
+  }
+}
+
+.do_edit_success {
+  color: green;
+  font-family: YuGothic,'Yu Gothic',sans-serif;
+  font-size: 30px;
+  margin: 20px 0 20px 10px;
+}
+
+.do_edit_alert_area {
+  text-align: center;
+  .do_edit_alert {
+    color: red;
+    font-family: YuGothic,'Yu Gothic',sans-serif;
+    font-size: 30px;
+  }
+}
+
+/* do_comment サクセスメッセージ */
+.do_comment_success {
+  color: green;
+  font-family: YuGothic,'Yu Gothic',sans-serif;
+  font-size: 30px;
+  margin: 20px 0 20px 10px;
+}
+.do_comment_alert {
+  color: red;
+  font-family: YuGothic,'Yu Gothic',sans-serif;
+  font-size: 30px;
+  margin: 20px 0 20px 10px;
+}
+
+.do_comment_destroy_success {
+  color: green;
+  font-family: YuGothic,'Yu Gothic',sans-serif;
+  font-size: 30px;
+  margin: 20px 0 20px 10px;
+}
+.do_comment_destroy_alert {
+  color: red;
+  font-family: YuGothic,'Yu Gothic',sans-serif;
+  font-size: 30px;
+  margin: 20px 0 20px 10px;
+}
+

@@ -1,0 +1,73 @@
+<div class="dos-show">
+    <% if flash[:do_destroy_alert] %>
+    <div class="do_destroy_alert_area">
+      <p class="do_destroy_alert"><%= flash[:do_destroy_alert] %></p>
+    </div>
+    <% end %>
+  <div class="dos-show-item">
+    <div class="do-show-contributor">
+      <%= link_to user_path(@do.user) do %>
+        <%= attachment_image_tag @do.user, :profile_image, fallback: "no_user_image.png", class: "do-show-contributor-image" %>
+      <% end %>
+      <h2 class="do-show-contributor-name"><%= @do.user.name %></h2>
+      <label class="do-show-posted-day"><%= @do.created_at.strftime('%Y/%m/%d %H:%M') %></label>
+      <% if @do.user == current_user %>
+        <div class="do-show-destroy-area">
+          <%= link_to "編集", edit_do_path(@do), data: {"turbolinks" => false}, class: "do-show-edit-button btn btn-success" %>
+          <%= link_to "削除", do_path(@do), method: :delete, class: "do-show-destroy-button btn btn-dark" %>
+        </div>
+      <% end %>
+    </div>
+    <div class="do-show-details">
+        <div class="do-show-details-category">
+          <div class="do-show-details-text">
+            <div class="do-show-details-text-word"><%= simple_format(@do.do_text) %></div>
+          </div>
+        </div>
+      </div>
+  </div>
+  <% if flash[:do_comment_success] %>
+  <p class="do_comment_success"><%= flash[:do_comment_success] %></p>
+  <% end %>
+  <% if flash[:do_comment_alert] %>
+  <p class="do_comment_alert"><%= flash[:do_comment_alert] %></p>
+  <% end %>
+  <% if flash[:do_comment_destroy_success] %>
+  <p class="do_comment_destroy_success"><%= flash[:do_comment_destroy_success] %></p>
+  <% end %>
+  <% if flash[:do_comment_destroy_alert] %>
+  <p class="do_comment_destroy_alert"><%= flash[:do_comment_destroy_alert] %></p>
+  <% end %>
+  <div class="books-show-comments">
+    <div class="books-show-comments-theme">
+      <h2>コメント</h2>
+    </div>
+    <% @do.do_comments.each do |do_comment| %>
+    <div class="books-show-comments-item">
+      <div class="books-show-comments-contributor">
+        <%= link_to user_path(do_comment.user) do %>
+          <%= attachment_image_tag do_comment.user, :profile_image, fallback: "no_user_image.png", class: "books-show-comments-contributor-image" %>
+        <% end %>
+        <h2 class="books-show-comments-contributor-name"><%= do_comment.user.name %></h2>
+        <label class="books-show-comments-posted-day"><%= do_comment.created_at.strftime('%Y/%m/%d %H：%M') %></label>
+      </div>
+      <div class="books-show-comments-details">
+        <div class="books-show-comments-details-text">
+          <p><%= simple_format(do_comment.todo_comment) %></p>
+        </div>
+      </div>
+    <% if do_comment.user == current_user %>
+    <div class="books-show-comments-delete">
+      <%= link_to "削除", do_do_comment_path(do_comment.do, do_comment), method: :delete, class: "btn btn-danger" %>
+    </div>
+    <% end %>
+    </div>
+    <% end %>
+  </div>
+  <div class="books-show-comments-new">
+    <%= form_with(model:[@do, @do_comment], local: true) do |f| %>
+      <%= f.text_area :todo_comment, rows: "5",placeholder: "コメントをここに", class: "books-show-comments-new-form" %>
+      <%= f.submit "送信", class: "btn btn-info books-show-comments-new-button" %>
+    <% end %>
+  </div>
+</div>

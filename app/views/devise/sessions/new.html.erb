@@ -1,0 +1,22 @@
+<div class="user-sign-in">
+  <div class="user-sign-in-item">
+    <i class="fas fa-user-plus"></i>
+    <h1 class="user-sign-in-theme">部員LOGIN</h1>
+  
+  <%= form_with model: @user, url: user_session_path, local: true do |f| %>
+    <div class="field">
+      <%= f.label :名前, class: "sign-in-name-field-title" %><br />
+      <%= f.text_field :name, autofocus: true, placeholder: "関大　太郎", autocomplete: "氏名", class: "user-sign-in-name-form" %>
+    </div>
+  
+    <div class="field">
+      <%= f.label :パスワード, class: "sign-in-password-field-title" %><br />
+      <%= f.password_field :password, placeholder: "（6字以上の英数字）", autocomplete: "current-password", class: "user-sign-in-password-form" %>
+    </div>
+  
+    <div class="sign-in-actions">
+      <%= f.submit "GO", class: "sign-in-button btn btn-success" %>
+    </div>
+  <% end %>
+  </div>
+</div>

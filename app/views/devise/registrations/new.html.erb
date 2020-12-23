@@ -1,0 +1,59 @@
+<div class="user-sign-up">
+  <div class="user-sign-up-item">
+    <i class="fas fa-user"></i>
+    <h1 class="user-sign-up-theme">部員新規登録</h1>
+    
+    <%= form_with model: @user, url: user_registration_path, id: 'new_user', class: 'new_user', local: true do |f| %>
+      <%= render "devise/shared/error_messages", resource: resource %>
+      
+      <div class="form-field">
+        <div class="name-field">
+          <div class="japanese-field">
+            <%= f.label :氏名, class: "japanese-field-title" %><br />
+            <%= f.text_field :name, autofocus: true, placeholder: "関大　太郎", autocomplete: "氏名", class: "user-sign-up-japanesename-form" %>
+          </div>
+          <div class="english-field">
+            <%= f.label :NAME %><br />
+            <%= f.text_field :english_name, autofocus: true, placeholder: "KANDAITAROU", autocomplete: "NAME", class: "user-sign-up-englishname-form" %>
+          </div>
+        </div>
+        
+        <div class="default-field">
+          <div class="field">
+            <%= f.label :メールアドレス, class: "field-theme" %><br />
+            <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "user-sign-up-email-form" %>
+          </div>
+        
+          <div class="field">
+            <%= f.label :パスワード, class: "field-theme" %><br />
+            <%= f.password_field :Password, placeholder: "(6字以上の半角英数字)", autocomplete: "new-password", class: "user-sign-up-password-form" %>
+          </div>
+        
+          <div class="field">
+            <%= f.label :パスワード再確認, class: "field-theme" %><br />
+            <%= f.password_field :password_confirmation, placeholder: "(6字以上の半角英数字)", autocomplete: "new-password", class: "user-sign-up-password-form" %>
+          </div>
+        </div>
+        
+        <div class="field">
+          <%= f.label :出身地, class: "field-theme" %><br />
+          <%= f.text_field :place, autofocus: true, placeholder: "都道府県", autocomplete: "出身地", class: "user-sign-up-place-form" %>
+        </div>
+        
+        <div class="field">
+          <%= f.label :生年月日, class: "field-theme" %><br />
+          <%= f.text_field :birthday, autofocus: true, placeholder: "〇〇〇〇年〇〇月〇〇日", autocomplete: "生年月日", class: "user-sign-up-birthday-form" %>
+        </div>
+        
+         <div class="field">
+          <%= f.label :現在の夢・目標, class: "field-theme" %><br />
+          <%= f.text_area :dream, autofocus: true, placeholder: "直近の目標でもいいよ！", autocomplete: "現在の夢・目標", class: "user-sign-up-dream-form" %>
+        </div>
+      
+        <div class="actions">
+          <%= f.submit "OK", class: "user-sign-up-button btn btn-info" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

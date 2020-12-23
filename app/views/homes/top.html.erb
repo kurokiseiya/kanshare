@@ -1,0 +1,18 @@
+<div class="homes-top">
+  <div class="top">
+    <div class="top-logo"></div>
+    <div class="top-kandai">
+      <h1 class="top-kandai-theme">関大サッカー部の方</h1>
+      <div class="top-kandai-button">
+        <%= link_to "新規登録", new_user_registration_path, class: "top-kandai-sign-up btn btn-info" %>
+        <%= link_to "ログイン", new_user_session_path, class: "top-kandai-sign-in btn btn-success" %>
+      </div>
+    </div>
+    <div class="top-other">
+      <h1 class="top-other-theme">他の閲覧者の方々</h1>
+      <div class="top-other-button">
+        <%= link_to "選手のTO DOへ", dos_path, class: "top-other-button-index btn btn-secondary" %>
+      </div>
+    </div>
+  </div>
+</div>
